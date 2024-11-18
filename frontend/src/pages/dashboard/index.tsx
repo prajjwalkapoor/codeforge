@@ -145,10 +145,13 @@ const Dashboard: FC = () => {
     setError(null);
 
     try {
-      await axios.post('http://localhost:5000/api/generate-token', {
-        type: 'free',
-        user_email: user.email
-      });
+      await axios.post(
+        `${import.meta.env.VITE_SERVER_URI}/api/generate-token`,
+        {
+          type: 'free',
+          user_email: user.email
+        }
+      );
 
       await fetchTokenData();
     } catch (err) {
@@ -316,7 +319,7 @@ const Dashboard: FC = () => {
             </p>
             <div className="mt-3 space-y-2">
               <p className="font-mono text-sm">
-                POST http://localhost:5000/run-code
+                POST http://13.201.131.13:5000/run-code
               </p>
               <p className="text-sm text-gray-600">Headers:</p>
               <div className="rounded bg-gray-100 p-2">
