@@ -9,7 +9,6 @@ import { auth } from '../../config/firebase';
 const LandingPage: FC = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
-
   const renderAuthButtons = () => {
     if (user) {
       return (
