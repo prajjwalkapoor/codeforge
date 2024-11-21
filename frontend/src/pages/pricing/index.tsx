@@ -21,10 +21,10 @@ export default function PricingPage() {
   const [hoveredPlan, setHoveredPlan] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen sm:px-6 lg:px-8">
+    <div className="mt-20 min-h-screen sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
+          <h1 className="text-4xl font-extrabold  dark:text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
             CodeForge Pricing
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-xl text-gray-500 dark:text-gray-400">
@@ -77,7 +77,7 @@ export default function PricingPage() {
         </div>
 
         <div className="mt-24">
-          <h2 className="mb-8 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
+          <h2 className="mb-8 text-center text-3xl font-extrabold dark:text-white">
             Frequently Asked Questions
           </h2>
           <Accordion type="single" collapsible className="mx-auto max-w-2xl">
@@ -91,7 +91,7 @@ export default function PricingPage() {
         </div>
 
         <div className="mt-24 text-center">
-          <h2 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white">
+          <h2 className="mb-4 text-3xl font-extrabold dark:text-white">
             Need More Information?
           </h2>
           <p className="mb-8 text-xl text-gray-500 dark:text-gray-400">

@@ -31,8 +31,8 @@ interface TokenLimitStatus {
 
 const TIER_LIMITS = {
   free: 10,
-  hobby: 500,
-  business: 10000
+  pro: 5000,
+  enterprise: 10000
 };
 
 const Dashboard: FC = () => {
@@ -343,7 +343,6 @@ const Dashboard: FC = () => {
                 <pre className="text-sm">
                   {`{
   "output": "Hello, World!",
-  "executionTime": "0.023s"
 }`}
                 </pre>
               </div>
@@ -354,9 +353,9 @@ const Dashboard: FC = () => {
             <h3 className="font-semibold">Rate Limits</h3>
             <div className="mt-2 space-y-2">
               <p className="text-sm">• Free Tier: 10 requests per day</p>
-              <p className="text-sm">• Hobby Tier: 500 requests per day</p>
+              <p className="text-sm">• Pro Tier: 5000 requests per day</p>
               <p className="text-sm">
-                • Business Tier: 10,000 requests per day
+                • Enterprise Tier: constom requests per day
               </p>
             </div>
           </div>

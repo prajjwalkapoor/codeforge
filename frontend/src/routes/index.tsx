@@ -4,6 +4,8 @@ import SignIn from '../pages/auth/signin';
 import Dashboard from '../pages/dashboard';
 import DashboardLayout from '../components/layout/dashboard-layout';
 import PricingPage from '@/pages/pricing';
+import SLA from '@/pages/SLA';
+import NavLaout from '@/components/layout/nav-layout';
 
 const router = createBrowserRouter([
   {
@@ -25,10 +27,14 @@ const router = createBrowserRouter([
   {
     path: '/pricing',
     element: (
-      <DashboardLayout>
+      <NavLaout>
         <PricingPage />
-      </DashboardLayout>
+      </NavLaout>
     )
+  },
+  {
+    path: 'sla',
+    element: <SLA />
   }
 ]);
 

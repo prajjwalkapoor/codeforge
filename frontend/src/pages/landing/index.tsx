@@ -5,49 +5,17 @@ import { ArrowRight } from 'lucide-react';
 import { features, pricingPlans } from '../../constants/data.tsx';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../config/firebase';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import NavLaout from '@/components/layout/nav-layout.tsx';
 
 const LandingPage: FC = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
-  const renderAuthButtons = () => {
-    if (user) {
-      return (
-        <button
-          onClick={() => navigate('/dashboard')}
-          className="rounded-lg bg-indigo-600 px-6 py-2 hover:bg-indigo-700"
-        >
-          View Dashboard
-        </button>
-      );
-    }
-
-    return (
-      <div className="flex gap-4">
-        <button
-          onClick={() => navigate('/auth/signin')}
-          className="rounded-lg bg-gray-800 px-6 py-2 hover:bg-gray-700"
-        >
-          Sign In
-        </button>
-        <button
-          onClick={() => navigate('/auth/signin')}
-          className="rounded-lg bg-indigo-600 px-6 py-2 hover:bg-indigo-700"
-        >
-          Get Started
-        </button>
-      </div>
-    );
-  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
-      {/* Hero Section */}
-      <div className="container mx-auto px-4 py-16">
-        <nav className="mb-16 flex items-center justify-between">
-          <div className="text-2xl font-bold">CodeForge</div>
-          {renderAuthButtons()}
-        </nav>
-
+    <NavLaout>
+      <div className="bg-gradient-to-b from-gray-900 to-gray-800 text-white">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,10 +35,18 @@ const LandingPage: FC = () => {
             {user ? 'Go to Dashboard' : 'Start Building'}
             <ArrowRight className="transition-transform group-hover:translate-x-1" />
           </button>
+          <Button
+            variant="secondary"
+            className="bg-transparent px-8 py-3 text-lg font-semibold text-white hover:bg-gray-700"
+            asChild
+          >
+            <Link to="/sla" className="mx-8 text-lg font-semibold">
+              SLA Agreement
+            </Link>
+          </Button>
         </motion.div>
       </div>
 
-      {/* Features Section */}
       <div className="bg-gray-800 py-24">
         <div className="container mx-auto px-4">
           <h2 className="mb-16 text-center text-4xl font-bold">
@@ -96,7 +72,6 @@ const LandingPage: FC = () => {
         </div>
       </div>
 
-      {/* Pricing Section */}
       <div className="py-24">
         <div className="container mx-auto px-4">
           <h2 className="mb-16 text-center text-4xl font-bold">
@@ -143,7 +118,7 @@ const LandingPage: FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </NavLaout>
   );
 };
 

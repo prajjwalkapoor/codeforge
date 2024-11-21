@@ -37,18 +37,16 @@ export const pricingPlans = [
     name: 'Free',
     price: '$0',
     features: [
-      '50 executions/day',
-      '5 concurrent requests',
+      '10 executions/day',
       'Basic languages support',
       'Community support'
     ]
   },
   {
     name: 'Pro',
-    price: '$49',
+    price: '$9.99/mo',
     features: [
-      '10,000 executions/day',
-      '50 concurrent requests',
+      '5,000 executions/day',
       'All languages support',
       'Priority support',
       'Custom timeout limits'
@@ -59,7 +57,6 @@ export const pricingPlans = [
     price: 'Custom',
     features: [
       'Unlimited executions',
-      'Unlimited concurrent requests',
       'Custom deployment options',
       '24/7 dedicated support',
       'SLA guarantees'

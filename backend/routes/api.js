@@ -38,8 +38,8 @@ const db = getFirestore();
 
 const TIER_LIMITS = {
   free: 10,
-  hobby: 500,
-  business: 10000,
+  pro: 5000,
+  enterprise: 10000,
 };
 
 // Language configurations
@@ -48,11 +48,11 @@ const LANGUAGES = ["javascript", "python"];
 // @desc    Generate new API token
 router.post("/generate-token", async (req, res) => {
   try {
-    const { type, user_email } = req.body; // type can be 'free', 'hobby', or 'business'
+    const { type, user_email } = req.body; // type can be 'free', 'pro', or 'enterprise'
 
     if (!type || !Object.keys(TIER_LIMITS).includes(type)) {
       return res.status(400).json({
-        msg: "Please specify valid token type (free/hobby/business)",
+        msg: "Please specify valid token type (free/pro/enterprise)",
       });
     }
 
